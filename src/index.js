@@ -37,6 +37,8 @@ class QuizBee extends Component{
         {this.state.questionBank.length > 0 && this.state.responses < 5 && this.state.questionBank.map(({question, answers, correct, questionId}) => (
         <QuestionBox question={question} options={answers} key={questionId} selected={answer => this.computeAnswer(answer, correct)}/>)
           )}
+
+        {this.state.responses === 5 ? <h2>{this.state.score}</h2> : null}
       </div>
     )
   }
